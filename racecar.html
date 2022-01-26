@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h2{
+                position:absolute;
+                color:white;
+                top:45px;
+
+            }
+            #NoKat{
+                position: absolute;
+                width: 300px;
+                top: 10vh;
+                left:10px;
+            }
+            #Kat{
+                position: absolute;
+                width: 200px;
+                top: 60vh;
+                left: 10px;
+            }
+            #aweoijfawhoihoiknolikoihoone {
+                height:97vh;
+                width:98vw;
+}
+        </style>
+    </head>
+    <body>
+        <h2 id = "times">
+            time:0;
+        </h2>
+        <img id="aweoijfawhoihoiknolikoihoone" src='https://t4.ftcdn.net/jpg/04/46/56/89/360_F_446568998_5ajfToFmz5ekLete9fCun6PerZcn681o.jpg'>
+        <img id = "Kat" src = "Kat.png">
+        <img id = "NoKat" src = "NoKat.png">
+        
+    
+    </body>
+</html>
+<script>
+    var namesarenotimpotant = document.getElementById ("Kat") 
+    var thisismyjob = document.getElementById ("NoKat")
+    var x = 0
+    var Px = 0
+    var times = 0
+    
+    document.addEventListener("keydown", keydownHandler)
+    setInterval(timer,1000)
+    document.getElementById ("times").innerText = times
+    
+
+
+    function timer(){
+        times=times+1
+        document.getElementById ("times").innerText = times
+
+    }
+
+    function keydownHandler(e){
+    if(x<window.innerWidth){
+        if(e.key==="w"){
+            x=x+10                                  
+            namesarenotimpotant.style.left =x + "px"
+
+            
+        }
+        
+        if(e.key==="p"){
+            Px=Px+10                                  
+            thisismyjob.style.left =Px + "px"
+            
+        }
+    }
+    }
+</script>
