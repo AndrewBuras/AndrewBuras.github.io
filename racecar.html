@@ -1,75 +1,168 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            h2{
-                position:absolute;
-                color:white;
-                top:45px;
 
-            }
-            #NoKat{
-                position: absolute;
-                width: 300px;
-                top: 10vh;
-                left:10px;
-            }
-            #Kat{
-                position: absolute;
-                width: 200px;
-                top: 60vh;
-                left: 10px;
-            }
-            #aweoijfawhoihoiknolikoihoone {
-                height:97vh;
-                width:98vw;
-}
-        </style>
-    </head>
-    <body>
-        <h2 id = "times">
-            time:0;
-        </h2>
-        <img id="aweoijfawhoihoiknolikoihoone" src='https://t4.ftcdn.net/jpg/04/46/56/89/360_F_446568998_5ajfToFmz5ekLete9fCun6PerZcn681o.jpg'>
-        <img id = "Kat" src = "Kat.png">
-        <img id = "NoKat" src = "NoKat.png">
-        
-    
-    </body>
+<head>
+    <style>
+        h2 {
+            position: absolute;
+            color: white;
+            top: 45px;
+
+        }
+
+        #NoKat {
+            position: absolute;
+            width: 300px;
+            top: 10vh;
+            left: 10px;
+        }
+
+        #Kat {
+            position: absolute;
+            width: 200px;
+            top: 60vh;
+            left: 10px;
+        }
+
+        #aweoijfawhoihoiknolikoihoone {
+            height: 97vh;
+            width: 98vw;
+
+        }
+
+        #WIN {
+            position: absolute;
+            top: 100px;
+            left: 500px;
+            width: 310px;
+            height: 210px;
+            background-color: teal;
+            font-size: 80px;
+
+            display: none;
+        }
+
+        #WIN2 {
+            position: absolute;
+            top: 100px;
+            left: 500px;
+            width: 310px;
+            height: 210px;
+            background-color: red;
+            font-size: 80px;
+
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="times">
+        time:0;
+    </h2>
+    <img id="aweoijfawhoihoiknolikoihoone"
+        src='https://t4.ftcdn.net/jpg/04/46/56/89/360_F_446568998_5ajfToFmz5ekLete9fCun6PerZcn681o.jpg'>
+    <img id="Kat" src="Kat.png">
+    <img id="NoKat" src="NoKat.png">
+    <div id="WIN">
+        <center>GOOD<br>
+            ENDING</center>
+    </div>
+    <div id="WIN2">
+        <center>BAD<br>
+            ENDING</center>
+    </div>
+
+
+
+</body>
+
 </html>
 <script>
-    var namesarenotimpotant = document.getElementById ("Kat") 
-    var thisismyjob = document.getElementById ("NoKat")
+    var namesarenotimpotant = document.getElementById("Kat")
+    var thisismyjob = document.getElementById("NoKat")
+    document.getElementById("WIN").addEventListener("click", endClick)
+    document.getElementById("WIN2").addEventListener("click", BadendClick)
+
     var x = 0
     var Px = 0
     var times = 0
-    
+    var start = false
+
     document.addEventListener("keydown", keydownHandler)
-    setInterval(timer,1000)
-    document.getElementById ("times").innerText = times
+    setInterval(timer, 1000)
+    document.getElementById("times").innerText = times
+
+
+    function endClick() {
+        start = false
+        times = 0
+        times = times + 0
+        x = 0
+        namesarenotimpotant.style.left = 0 + "px"
+        document.getElementById("WIN").style.display = "none"
+        document.getElementById("times").innerText = times
+        Px = 0
+        thisismyjob.style.left = 0 + "px"
+    }
+    function BadendClick() {
+        start = false
+        times = 0
+        times = times + 0
+        Px = 0
+        thisismyjob.style.left = 0 + "px"
+        document.getElementById("WIN2").style.display = "none"
+        document.getElementById("times").innerText = times
+        x = 0
+        namesarenotimpotant.style.left = 0 + "px"
+    }
+
+    function timer() {
+        if (start === true) {
+            times = times + 1
+            document.getElementById("times").innerText = times
+        }
+    }
+
+    function keydownHandler(e) {
+        if (x < window.innerWidth) {
+            if (e.key === "w") {
+                x = x + 10
+                namesarenotimpotant.style.left = x + "px"
+                if (x >= 1200) {
+                    document.getElementById("WIN").style.display = "block"
+                }
+                start = true
+
+            }
+
+            if (e.key === "p") {
+                Px = Px + 10
+                thisismyjob.style.left = Px + "px"
+                if (Px >= 1200) {
+                    document.getElementById("WIN2").style.display = "block"
+                }
+
+                start = true
+
+            }
+        }
+
+        if (e.key === "r") {
+            start = false
+            times = 0
+            times = times + 0
+            x = 0
+            namesarenotimpotant.style.left = 0 + "px"
+            document.getElementById("WIN").style.display = "none"
+            document.getElementById("times").innerText = times
+            Px = 0
+            thisismyjob.style.left = 0 + "px"
+            document.getElementById("WIN2").style.display = "none"
+
+        }
+    }
     
 
 
-    function timer(){
-        times=times+1
-        document.getElementById ("times").innerText = times
-
-    }
-
-    function keydownHandler(e){
-    if(x<window.innerWidth){
-        if(e.key==="w"){
-            x=x+10                                  
-            namesarenotimpotant.style.left =x + "px"
-
-            
-        }
-        
-        if(e.key==="p"){
-            Px=Px+10                                  
-            thisismyjob.style.left =Px + "px"
-            
-        }
-    }
-    }
 </script>
